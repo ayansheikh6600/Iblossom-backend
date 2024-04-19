@@ -20,7 +20,7 @@ let server: Server; // এটা তারা বুঝায় সার্ভ
 
 async function connection() {
   try {
-    await mongoose.connect(config.database_url as string);
+    await mongoose.connect(config.database_url as string, {bufferCommands: true});
     config.env === 'production'
       ? logger.info(`Database connection successfull`.green.underline.bold)
       : console.log(`Database connection successfull`.green.underline.bold);
