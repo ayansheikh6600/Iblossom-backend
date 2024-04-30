@@ -15,7 +15,7 @@ import path from 'path';
 const storage: StorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
 
-    cb(null, path.join(__dirname, '../../../../uploadFile/images/'));
+    cb(null, path.join('./src/uploadFile/images'));
   },
   filename: (
     req,
@@ -64,7 +64,7 @@ export const uploadSingleImage: RequestHandler = multer({
 //-------------single file upload----start------------
 const storageByProfile: StorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../../../../uploadFile/profile/'));
+    cb(null, path.join('./src/uploadFile/profile'));
   },
   filename: (
     req,
@@ -112,7 +112,7 @@ export const uploadSingleImageByProfile: RequestHandler = multer({
 //------------upload multiple images-----------------
 const storageMultiple: StorageEngine = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../../../../uploadFile/images/'));
+    cb(null, path.join('./src/uploadFile/audios'));
   },
   filename: (req, file, cb) => {
     const fileExt = path.extname(file.originalname);
@@ -156,7 +156,7 @@ export const uploadMultipleImage: RequestHandler = multer({
 //------------upload video file ---start-----------
 const videoStorage: StorageEngine = multer.diskStorage({
   destination: (req: any, file: any, cb: (arg0: null, arg1: string) => any) => {
-    cb(null, path.join(__dirname, '../../../../uploadFile/video/'));
+    cb(null, path.join('./src/uploadFile/vedios'));
   },
   filename: (
     req: any,
@@ -199,7 +199,7 @@ export const uploadVideoFile: RequestHandler = multer({
 //------------upload pdf file ---start-----------
 const pdfStorage: StorageEngine = multer.diskStorage({
   destination: (req: any, file: any, cb: (arg0: null, arg1: string) => any) => {
-    cb(null, path.join(__dirname, '../../../../uploadFile/pdfs/'));
+    cb(null, path.join('./src/uploadFile/pdfs/'));
   },
   filename: (
     req: any,
@@ -244,7 +244,7 @@ export const uploadPdfFile: RequestHandler = multer({
 //------------upload audio file ---start-----------
 const audioStorage: StorageEngine = multer.diskStorage({
   destination: (req: any, file: any, cb: (arg0: null, arg1: string) => any) => {
-    cb(null, path.join(__dirname, '../../../../uploadFile/audios/'));
+    cb(null, path.join('./src/uploadFile/audios'));
   },
   filename: (
     req: any,

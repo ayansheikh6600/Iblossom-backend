@@ -19,6 +19,7 @@ import { FileUploadeService } from './service.fileUploade';
 
 const uploadeSingleFileByServer = catchAsync(
   async (req: Request, res: Response) => {
+    console.log(req.body)
     const result: any = await FileUploadHelper.uploadToCloudinary(
       req.file as any,
     );

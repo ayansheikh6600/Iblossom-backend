@@ -11,6 +11,7 @@ import { FileUploadHelper } from '../../middlewares/uploderCloudinary';
 import validateRequestZod from '../../middlewares/validateRequestZod';
 import { FileUploadeController } from './constroller.fileUploade';
 import { FileUploadeValidation } from './validation.fileUploade';
+import { Request, Response, NextFunction } from 'express';
 
 const router = express.Router();
 
@@ -19,8 +20,11 @@ router.route('/upload-single-image').post(
     ENUM_USER_ROLE.ADMIN,
     ENUM_USER_ROLE.SELLER,
     ENUM_USER_ROLE.STUDENT,
+
   ),
   // uploadSingleImage,
+  
+
   FileUploadHelper.upload.single('image'),
   FileUploadeController.uploadeSingleFileByServer,
   // FileUploadHelper.uploadToCloudinary,

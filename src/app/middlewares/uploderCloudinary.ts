@@ -18,7 +18,7 @@ cloudinary.config({
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     // cb(null, 'uploadFile/images/');
-    cb(null, path.join(__dirname, '../../../../uploadFile/images/'));
+    cb(null, path.join("./src/uploadFile/images"));
   },
   filename: (
     req,
@@ -37,10 +37,29 @@ const storage = multer.diskStorage({
     cb(null, fileName + fileExt);
   },
 });
+
+// const storage = multer.diskStorage({
+//   destination: (req, file, callback) => {
+//       try {
+//           callback(null, 'upload/')
+//       } catch (error) {
+//           console.log(error)
+//       }
+//   },
+//   filename: (req, file, callback) => {
+//       try {
+//           let tempFilename  = Date.now() + path.extname(file.originalname)
+//           // req.tempFilename = tempFilename
+//           return callback(null, tempFilename)
+//       } catch (error) {
+//           console.log(error)
+//       }
+//   }
+// })
 const profileStorage = multer.diskStorage({
   destination: function (req, file, cb) {
     // cb(null, 'uploadFile/images/');
-    cb(null, path.join(__dirname, '../../../../uploadFile/profile/'));
+    cb(null, path.join('./src/uploadFile/images'));
   },
   filename: (
     req,
