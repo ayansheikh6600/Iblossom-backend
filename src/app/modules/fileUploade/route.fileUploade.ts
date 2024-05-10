@@ -87,11 +87,11 @@ router
 router
   .route('/upload-audio')
   .post(
-    // authMiddleware(
-    //   ENUM_USER_ROLE.ADMIN,
-    //   ENUM_USER_ROLE.SELLER,
-    //   ENUM_USER_ROLE.STUDENT,
-    // ),
+    authMiddleware(
+      ENUM_USER_ROLE.ADMIN,
+      ENUM_USER_ROLE.SELLER,
+      ENUM_USER_ROLE.STUDENT,
+    ),
     uploadAudioFile,
     FileUploadeController.uploadeAudioFileByServer,
   );

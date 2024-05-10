@@ -174,7 +174,7 @@ app.get(
     try {
       const filePath = path.resolve(
         __dirname,
-        `../../uploadFile/audios/${req.params?.filename}`,
+        `../src/uploadFile/audios/${req.params?.filename}`,
       );
       return res.sendFile(filePath);
     } catch (error: any) {
